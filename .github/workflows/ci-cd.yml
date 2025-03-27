@@ -48,10 +48,10 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}:${{ github.sha }}
 
-      # Trigger Easy Panel Webhook
-      - name: Trigger Easy Panel Webhook
-        if: success()
-        run: |
-          curl -X POST ${{ secrets.EASYPANEL_WEBHOOK_URL }} \
-          -H "Content-Type: application/json" \
-          -d '{"repository":"${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}","tag":"latest"}'
+    #   # Trigger Easy Panel Webhook
+    #   - name: Trigger Easy Panel Webhook
+    #     if: success()
+    #     run: |
+    #       curl -X POST ${{ secrets.EASYPANEL_WEBHOOK_URL }} \
+    #       -H "Content-Type: application/json" \
+    #       -d '{"repository":"${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}","tag":"latest"}'
